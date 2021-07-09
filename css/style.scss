@@ -1,0 +1,997 @@
+//All device
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: "Montserrat";
+}
+
+.header {
+  top: 0;
+  position: sticky;
+  background: white;
+
+  .top-bar {
+    background-color: #333;
+    color: #999;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 19.5%;
+
+    .list {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .show-list {
+        display: none;
+        position: absolute;
+        top: 146%;
+        right: 0;
+        left: 0;
+        background-color: #333;
+        text-align: right;
+        padding: 0;
+
+        li {
+          list-style-type: none;
+          padding-right: 10px;
+          width: 100%;
+
+          &:hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+
+    .register {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: #999;
+        text-decoration: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 1px;
+          bottom: 8px;
+          left: 0;
+          background-color: white;
+          transform-origin: bottom right;
+          transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+
+      .sign-in {
+        margin-right: 70px;
+      }
+
+      .cart {
+        padding: 10px 30px;
+        background-color: #00c8c8;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        cursor: pointer;
+        position: relative;
+
+        .show-cart {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: -70px;
+          left: 0;
+          background-color: black;
+          color: white;
+          text-align: left;
+          z-index: 999;
+
+          .show-cart-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid gainsboro;
+            padding: 10px 5px;
+            font-weight: bold;
+          }
+
+          p {
+            padding: 0 20px;
+          }
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        span {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 3% 45px;
+
+    .nav-header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 7px;
+      padding-right: 7px;
+
+      .menu {
+        margin-right: 50px;
+        display: flex;
+
+        .subnav {
+          position: relative;
+          cursor: pointer;
+
+          > a {
+            text-decoration: none;
+            color: #222;
+            font-size: 13px;
+            padding: 20px 30px;
+            font-weight: bold;
+          }
+
+          &:hover .subnav-content {
+            display: block;
+          }
+
+          &:hover {
+            > a {
+              color: #00c8c8;
+            }
+          }
+
+          .subnav-content {
+            position: absolute;
+            display: none;
+            background: white;
+            left: -150%;
+            padding: 25px 0;
+            box-shadow: 5px 10px 10px #8888;
+
+            .subnav-content-options {
+              display: flex;
+              margin-bottom: 20px;
+
+              ul {
+                li {
+                  list-style-type: none;
+                  margin-bottom: 10px;
+
+                  &:hover {
+                    color: black;
+                    font-weight: bold;
+                  }
+
+                  .subnav-content-title {
+                    > a {
+                      text-decoration: none;
+                      color: #222;
+                      font-size: 12px;
+                      font-weight: bold;
+
+                      &:hover {
+                        color: gray;
+                      }
+                    }
+                  }
+
+                  > a {
+                    text-decoration: none;
+                    color: #727272;
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+
+            > img {
+              margin: 0 25px;
+            }
+          }
+        }
+      }
+
+      .search {
+        position: relative;
+        text-align: right;
+
+        input {
+          padding: 2px 5px;
+          border: 1px solid gainsboro;
+          outline: none;
+          width: 85%;
+        }
+
+        i {
+          position: absolute;
+          right: 10px;
+          top: 5px;
+          color: #ababab;
+        }
+      }
+    }
+  }
+}
+
+.section-intro {
+  background-image: url(../image/background_section_intro.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 160px 5% 145px;
+  text-align: center;
+
+  .intro-title {
+    .title-content {
+      font-size: 48px;
+      color: white;
+      font-weight: bold;
+
+      span {
+        font-weight: 100;
+      }
+    }
+  }
+
+  .intro-content {
+    p {
+      font-size: 30px;
+      color: white;
+      margin-top: 25px;
+    }
+  }
+}
+
+.section-content {
+  padding: 60px 18.5%;
+
+  .section-content-body {
+    display: flex;
+
+    .content-body-column {
+      margin: 0 10px;
+
+      .paragraph-text {
+        padding-left: 5px;
+
+        .title-content {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 23px;
+          margin-top: 63px;
+        }
+
+        > .description {
+          font-size: 13px;
+          text-transform: uppercase;
+          color: #727272;
+          font-weight: bold;
+          margin-bottom: 13px;
+        }
+
+        p {
+          text-align: justify;
+          font-size: 15px;
+          font-family: "Roboto";
+          color: #a5a3a3;
+
+          > a {
+            color: #00c8c8;
+            text-decoration: none;
+
+            &:hover {
+              color: blue;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .paragraph-second {
+        margin-top: 64px;
+
+        .paragraph-text {
+          .title-content {
+            margin-top: 23px;
+          }
+        }
+      }
+
+      .paragraph-third {
+        margin-top: 58px;
+
+        > img {
+          margin: 0 5px;
+        }
+
+        .paragraph-text {
+          .title-content {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .award {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 84px 19% 57px;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+      padding: 0;
+      flex: 1;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 6px;
+
+        .title-content {
+          font-size: 13px;
+          font-weight: bold;
+          margin-bottom: 25px;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: 14px;
+          font: lighter;
+
+          &:hover {
+            color: #00c8c8;
+          }
+        }
+
+        address {
+          color: black;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .footer-image {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+
+    img {
+      margin: 0 8px;
+      height: 100%;
+      width: 50%;
+    }
+  }
+}
+
+.copy-right {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  padding: 15px 21%;
+  align-items: center;
+  font-size: 13px;
+}
+
+.section-content-mobile {
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+//Responsive Tablet
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    display: none;
+  }
+
+  .section-intro {
+    padding: 100px 5%;
+  }
+  .nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    .cart {
+      padding: 10px 30px;
+      color: white;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+
+      .show-cart {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: -20px;
+        left: -100px;
+        background-color: black;
+        color: white;
+        text-align: left;
+        z-index: 999;
+
+        .show-cart-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid gainsboro;
+          padding: 10px 5px;
+          font-weight: bold;
+        }
+
+        p {
+          padding: 0 20px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      span {
+        margin: 0 10px;
+      }
+    }
+
+    > .menu {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: #80808047;
+      }
+
+      .nav-button {
+        font-size: 25px;
+        cursor: pointer;
+        margin-left: 20px;
+      }
+
+      span {
+        color: white;
+        font-size: 16px;
+        font-family: "Open Sans";
+      }
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111111e6;
+      overflow-x: hidden;
+      transition: 0.5s;
+      display: block;
+      text-align: center;
+
+      .logo {
+        background: white;
+        padding: 50px 0;
+        margin-bottom: 50px;
+      }
+
+      .register {
+        text-align: left;
+        border-bottom: 1px solid gainsboro;
+      }
+
+      .header-content {
+        text-align: left;
+        margin-top: 20px;
+
+        .subnav {
+          position: relative;
+          cursor: pointer;
+
+          > a {
+            text-decoration: none;
+          }
+
+          &:hover .subnav-content {
+            display: block;
+          }
+
+          .subnav-content {
+            display: none;
+
+            .subnav-content-options {
+              ul {
+                li {
+                  list-style-type: none;
+                  margin-bottom: 10px;
+
+                  .subnav-content-title {
+                    > a {
+                      text-decoration: none;
+                    }
+                  }
+
+                  > a {
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .search {
+          position: relative;
+
+          input {
+            padding: 2px 5px;
+            border: 1px solid gainsboro;
+            outline: none;
+            margin-left: 30px;
+          }
+
+          i {
+            position: absolute;
+            left: 225px;
+            top: 5px;
+            color: #ababab;
+          }
+        }
+      }
+
+      a {
+        margin-bottom: 20px;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        color: #f1f1f1;
+      }
+
+      .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .section-content {
+    display: none;
+  }
+
+  .section-content-mobile {
+    padding: 60px 10%;
+    display: block;
+
+    .section-content-body {
+      display: flex;
+      flex-direction: column;
+
+      .paragraph-text {
+        .title-content {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          margin-top: 55px;
+        }
+
+        .description {
+          font-size: 13px;
+          text-transform: uppercase;
+          color: #727272;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+
+        p {
+          text-align: justify;
+          font-size: 15px;
+          font-family: "Roboto";
+          color: #a5a3a3;
+
+          > a {
+            color: #00c8c8;
+            text-decoration: none;
+
+            &:hover {
+              color: blue;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 370px;
+      }
+
+      .award {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 30px;
+
+        > img {
+          width: 144px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 55px 10%;
+
+    .footer-content {
+      ul {
+        padding: 0 3px;
+
+        li {
+          .title-content {
+            font-size: 10px;
+          }
+
+          a {
+            font-size: 12px;
+          }
+
+          address {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Responsive SP
+@media screen and (max-width: 767px) {
+  .header {
+    display: none;
+  }
+
+  .section-intro {
+    padding: 100px 5%;
+  }
+  .nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    .cart {
+      padding: 10px 30px;
+      color: white;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+
+      .show-cart {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: -20px;
+        left: -100px;
+        background-color: black;
+        color: white;
+        text-align: left;
+        z-index: 999;
+
+        .show-cart-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid gainsboro;
+          padding: 10px 5px;
+          font-weight: bold;
+        }
+
+        p {
+          padding: 0 20px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      span {
+        margin: 0 10px;
+      }
+    }
+
+    > .menu {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: #80808047;
+      }
+
+      .nav-button {
+        font-size: 25px;
+        cursor: pointer;
+        margin-left: 20px;
+      }
+
+      span {
+        color: white;
+        font-size: 16px;
+        font-family: "Open Sans";
+      }
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111111e6;
+      overflow-x: hidden;
+      transition: 0.5s;
+      display: block;
+      text-align: center;
+
+      .logo {
+        background: white;
+        padding: 50px 0;
+        margin-bottom: 50px;
+      }
+
+      .register {
+        text-align: left;
+        border-bottom: 1px solid gainsboro;
+      }
+
+      .header-content {
+        text-align: left;
+        margin-top: 20px;
+
+        .subnav {
+          position: relative;
+          cursor: pointer;
+
+          > a {
+            text-decoration: none;
+          }
+
+          &:hover .subnav-content {
+            display: block;
+          }
+
+          .subnav-content {
+            display: none;
+
+            .subnav-content-options {
+              ul {
+                li {
+                  list-style-type: none;
+                  margin-bottom: 10px;
+
+                  .subnav-content-title {
+                    > a {
+                      text-decoration: none;
+                    }
+                  }
+
+                  > a {
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .search {
+          position: relative;
+
+          input {
+            padding: 2px 5px;
+            border: 1px solid gainsboro;
+            outline: none;
+            margin-left: 30px;
+          }
+
+          i {
+            position: absolute;
+            left: 225px;
+            top: 5px;
+            color: #ababab;
+          }
+        }
+      }
+
+      a {
+        margin-bottom: 20px;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        color: #f1f1f1;
+      }
+
+      .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .section-content {
+    display: none;
+  }
+
+  .section-content-mobile {
+    padding: 60px 10%;
+    display: block;
+
+    .section-content-body {
+      display: flex;
+      flex-direction: column;
+
+      .paragraph-text {
+        .title-content {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          margin-top: 55px;
+        }
+
+        .description {
+          font-size: 13px;
+          text-transform: uppercase;
+          color: #727272;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+
+        p {
+          text-align: justify;
+          font-size: 15px;
+          font-family: "Roboto";
+          color: #a5a3a3;
+
+          > a {
+            color: #00c8c8;
+            text-decoration: none;
+
+            &:hover {
+              color: blue;
+            }
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 370px;
+      }
+
+      .award {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 30px;
+
+        > img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 55px 5%;
+
+    .footer-content {
+      ul {
+        padding: 0 3px;
+
+        li {
+          .title-content {
+            font-size: 8px;
+            height: 20px;
+          }
+
+          a {
+            font-size: 8px;
+          }
+
+          address {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    .footer-image {
+      img {
+        margin: 0 2px;
+      }
+    }
+  }
+
+  .copy-right {
+    padding: 10px 10%;
+  }
+}
